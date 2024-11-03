@@ -1,3 +1,4 @@
 keys/
 db/
 venv/
+__pycache__/
