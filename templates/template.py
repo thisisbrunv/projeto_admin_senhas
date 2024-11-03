@@ -24,3 +24,18 @@ if action == '1':
     fernet_user = FernetHasher(key)
     p1 = Password(domain=domain, password=fernet_user.encrypt(password).decode('utf-8'))
     p1.save()
+
+elif action == '2':
+    domain = input('dominio: ')
+    key = input('key: ')
+    fernet_user = FernetHasher(key)
+    data = Password.get()
+
+    for i in data:
+        if domain in i['domain']:
+            password = fernet_user.decrypt(i['password'])
+    if password:
+        print(f'sua senha: {password}')
+    else:
+        print('nenhuma senha encontrada para o dominio')
+
