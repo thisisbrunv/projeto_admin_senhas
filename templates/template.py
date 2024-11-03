@@ -19,8 +19,8 @@ if action == '1':
     else:
         key = input('Digite sua chave usada para criptografia, use sempre a mesma chave: ')
 
-domain = input('dominio: ')
-password = input('senha: ')
-fernet_user = FernetHasher(key)
-p1 = Password(domain=domain, password=fernet_user.encrypt(password).decode('utf-8'))
-p1.save()
+    domain = input('dominio: ')
+    password = input('senha: ')
+    fernet_user = FernetHasher(key)
+    p1 = Password(domain=domain, password=fernet_user.encrypt(password).decode('utf-8'))
+    p1.save()
